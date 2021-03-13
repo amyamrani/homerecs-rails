@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_023600) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
-    t.uuid "code", null: false
+    t.string "code", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
