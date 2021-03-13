@@ -1,0 +1,13 @@
+<h1><%= current_user.group.name %></h1>
+
+Invite Code: <%= current_user.group.code %>
+
+<h2>Group Members</h2>
+
+<ul>
+  <% @group.users.each do |group_user| %>
+    <li>
+      <%= group_user.first_name + ' ' + group_user.last_name %>
+    </li>
+  <% end %>
+</ul>

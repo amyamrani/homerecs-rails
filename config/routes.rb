@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'groups/show'
+  get 'dashboards/show'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resource :dashboard, only: :show
+
+  resources :groups, only: :show
 end
