@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.code = SecureRandom.hex(3)
 
     if @group.save
       current_user.group = @group
@@ -36,6 +37,6 @@ class GroupsController < ApplicationController
 
   private
     def group_params
-      params.require(:group).permit(:name, :comments, :url, :category)
+      params.require(:group).permit(:name)
     end
 end
