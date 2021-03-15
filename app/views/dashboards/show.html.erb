@@ -1,7 +1,9 @@
 <h1>Dashboard</h1>
-<% if current_user.group %>
 
+<% if current_user.group %>
   <%= link_to current_user.group.name, group_path(current_user.group) %>
+<% else %>
+  <%= link_to "Join Group", edit_user_path(current_user.id) %>
 <% end %>
 
 

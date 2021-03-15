@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
+  def edit
+  end
+
   def update
-    current_user.update!(user_params)
+    if params[:user][:code]
+      group_id = Group.find_by(code: params[:user][:code])&.id
+      current_user.update(group_id: group_id)
+    else
+      current_user.update(user_params)
+    end
 
     if current_user.group
       redirect_to group_path(current_user.group_id)
