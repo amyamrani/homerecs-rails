@@ -2,6 +2,10 @@
 
 Invite Code: <%= current_user.group.code %>
 
+<%= link_to 'Leave Group', user_path(current_user.id, user: { group_id: nil }),
+  method: :patch,
+  data: { confirm: "Are you sure?" } %>
+
 <h2>Group Members</h2>
 
 <ul>
