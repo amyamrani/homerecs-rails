@@ -25,7 +25,7 @@
 
   <div>
     <%= form.label :category %><br>
-    <%= form.select :category, ['public', 'private', 'archived'], selected: 'public' %>
+    <%= form.select :category, Product::CATEGORIES %>
   </div>
 
   <div>
