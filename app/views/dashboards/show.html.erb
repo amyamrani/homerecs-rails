@@ -1,15 +1,43 @@
-<h1>Dashboard</h1>
+<div class='page-container'>
+  <div class='page-header'>
+    <div class='page-section'>
+      <div class='page-title'>
+        <h1>Dashboard</h1>
 
-<% if current_user.group %>
-  <%= link_to current_user.group.name, group_path(current_user.group) %>
-<% else %>
-  <%= link_to "Join Group", edit_user_path(current_user.id) %>
-  <%= link_to "Create Group", new_group_path %>
-<% end %>
+        <% if current_user.group_id == nil %>
+          <div>
+            <%= link_to 'Create Group', new_group_path, class: 'button button-primary' %>
+            <%= link_to 'Join Group', edit_user_path(current_user.id), class: 'button' %>
+          </div>
+        <% end %>
+      </div>
 
+      <% if current_user.group %>
+        <div class='current-group'>
+          <span class='current-group-label'>My Group: </span>
 
-<div>
-  <%= link_to "Add new product", new_product_path %>
+          <div>
+            <%= link_to current_user.group.name, group_path(current_user.group), class: 'link-xl' %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class='page-section'>
+    <div class='page-subtitle'>
+      <h2>My Products</h2>
+
+      <div class='page-subtitle-buttons'>
+        <%= link_to new_product_path, class: 'button button-primary' do %>
+          <svg class='icon' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width="2" d='M12 6v6m0 0v6m0-6h6m-6 0H6' />
+          </svg>
+        <% end %>
+      </div>
+    </div>
+
+    <%= render partial: "products/products", locals: { products: current_user.products } %>
+  </div>
 </div>
-
-<%= render partial: "products/products", locals: { products: current_user.products } %>
