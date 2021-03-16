@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def show
+    # Scope users to only show users from the same group
+    @user = current_user.group.users.find(params[:id])
+  end
+
   def edit
   end
 

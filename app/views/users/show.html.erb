@@ -1,0 +1,9 @@
+<h1>
+  <%= @user.full_name %>
+</h1>
+
+<h2>
+  Home Recommendations
+</h2>
+
+<%= render partial: "products/products", locals: { products: @user.products } %>
