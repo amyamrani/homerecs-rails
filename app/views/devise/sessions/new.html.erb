@@ -1,26 +1,39 @@
-<h2>Log in</h2>
+<div class='page-container'>
+  <h1 class='section-title'>Login</h1>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Login", class: 'button button-primary' %>
+    </div>
+
+    <div>
+      <%= link_to "Don't have an account? Sign up here.", new_user_registration_path, class: 'link' %>
+    </div>
+
+    <div class='demo-container'>
+      <div class='demo-label'>
+        Demo User Credentials
+      </div>
+
+      <div>
+        <label class='demo-credentials-label'>Email:</label> demo@user.com
+      </div>
+
+      <div>
+        <label class='demo-credentials-label'>Password:</label> Password123
+      </div>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
