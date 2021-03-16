@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :group, optional: true
   has_many :products
+
+  def full_name
+    first_name + ' ' + last_name
+  end
 end
