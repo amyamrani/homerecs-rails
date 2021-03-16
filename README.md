@@ -1,24 +1,27 @@
-# README
+# HomeRecs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Connect with friends and family to share the products you love so everyone can feel confident about the products they buy.
 
-Things you may want to cover:
+## Live App
 
-* Ruby version
+## Screenshots
 
-* System dependencies
+Landing Page:
 
-* Configuration
+![search](app/assets/images/landing_page_screenshot.png)
 
-* Database creation
+Dashboard:
 
-* Database initialization
+![search](app/assets/images/dashboard_screenshot.png)
 
-* How to run the test suite
+Group Page:
 
-* Services (job queues, cache servers, search engines, etc.)
+![search](app/assets/images/group_page_screenshot.png)
 
-* Deployment instructions
+User Recommendations Page:
 
-* ...
+![search](app/assets/images/user_recs_page_screenshot.png)
+
+## Technologies Used
+- Ruby on Rails
+- PostgreSQL
