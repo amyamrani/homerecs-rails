@@ -3,6 +3,7 @@
 Connect with friends and family to share the products you love so everyone can feel confident about the products they buy.
 
 ## Live App
+https://homerecs-rails.herokuapp.com/
 
 ## Screenshots
 
